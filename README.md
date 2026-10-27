@@ -8,6 +8,7 @@ Home Assistant integration for the VanMoof S/A5 e-bike series. This custom integ
 
 **Sensors**
 - Battery and module battery, total distance, bike state (off / standby / on), lock state
+- Find My status (diagnostic binary sensor, with the ready / paired / pairing / provisioned flags as attributes)
 - Region and speed limit, firmware version, firmware update available
 - Weekly ride statistics from the VanMoof cloud (rides, distance, average distance)
 
