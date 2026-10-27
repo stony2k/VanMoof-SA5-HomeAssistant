@@ -32,6 +32,7 @@ Not exposed on purpose: the backup code and firmware flashing.
 
 ### Notes
 
+- While the bike is away or a connection fails, the entities keep their last known values instead of turning unavailable. The "In range", "Connection state" and "Last seen" entities show whether the values are current.
 - The bike does not report the touch unlock setting. Home Assistant remembers the last value you set.
 - Ride statistics come from the VanMoof cloud and refresh every 6 hours. Their units are not documented by VanMoof; the raw summary is available as an attribute.
 - Protocol details: [docs/PROTOCOL.md](docs/PROTOCOL.md)
