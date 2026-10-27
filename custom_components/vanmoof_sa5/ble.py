@@ -423,8 +423,8 @@ class VanMoofBikeBleClient:
             lock_state=LOCK_STATES.get(lock_raw),
             locked=None if lock_raw not in LOCK_STATES else lock_raw == 1,
             bike_state=_map_bike_state(topics.get(Topic.BIKE_STATE)),
-            # The app divides the raw value by 10 to get total kilometres.
-            distance_km=None if distance is None else round(distance / 10.0, 1),
+            # raw / 100 matches the rides of an S5 (weekly totals of 4 to 14 km); raw / 10 gave ten times too much.
+            distance_km=None if distance is None else round(distance / 100.0, 1),
             speed_kmh=None if speed is None else round(speed / 100.0, 1),
             calories=float(calories) if isinstance(calories, int | float) else None,
             power_level=POWER_LEVEL_OPTIONS.get(_as_int(topics.get(Topic.POWER_LEVEL))),

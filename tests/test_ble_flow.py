@@ -37,7 +37,7 @@ class FakeBike:
             Topic.BATTERY_LEVEL: 87,
             Topic.LOCK_STATE: 1,
             Topic.BIKE_STATE: 2,
-            Topic.DISTANCE: 12345,
+            Topic.DISTANCE: 97394,
             Topic.POWER_LEVEL: 2,
             Topic.LIGHT_MODE: 3,
             Topic.BELL_SOUND: 3,
@@ -156,7 +156,7 @@ def test_fetch_state_maps_all_topics(bike_env):
     assert state.battery_level == 87
     assert state.locked is True and state.lock_state == "locked"
     assert state.bike_state == "standby"
-    assert state.distance_km == 1234.5
+    assert state.distance_km == 973.9
     assert state.power_level == "2" and state.light_mode == "auto"
     assert state.bell_sound == "vanmoof" and state.region == "eu"
     assert state.speed_limit == "25 km/h"
